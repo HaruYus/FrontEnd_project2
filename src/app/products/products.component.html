@@ -1,0 +1,18 @@
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>IMAGE</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+            </tr>
+        </thead>    
+        <tbody>
+            <tr *ngFor="let eachProduct of allProducts">
+                <td><img src="{{ eachProduct.image }}" width="130px" height="125px" alt ="null" /></td>
+                <td>{{ eachProduct.name }}</td>
+                <td>{{ eachProduct.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

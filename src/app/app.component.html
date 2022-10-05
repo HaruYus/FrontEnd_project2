@@ -3,14 +3,23 @@
     <div class="col-md-12">
       <div class="card bg-dark my-5">
         <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <h2 class="card-title text-center text-white py-3" *ngIf="retrieveIsUserLoggedIn()">Hello Admin</h2>
+          <h2 class="card-title text-center text-white py-3" *ngIf="!retrieveIsUserLoggedIn()">Welcome to EShop</h2>
           <ul class="text-center list-inline py-3">
             <li class="list-inline-item">
-              <a routerLink="/customers" class="btn btn-info">List customers</a>
+              <a routerLink="/customers" class="btn btn-info"*ngIf="retrieveIsUserLoggedIn()">List customers</a>
                 </li>
             <li class="list-inline-item">
-              <a routerLink="/adduser" class="btn btn-info">Add User</a>
+              <a routerLink="/products" class="btn btn-info"*ngIf="retrieveIsUserLoggedIn()">List products</a>
                 </li>
+            <li class="list-inline-item">
+              <a routerLink="." class="btn btn-info">Home</a>
+            <li class="list-inline-item">
+              <a routerLink="/login" class="btn btn-info"*ngIf="!retrieveIsUserLoggedIn()">Login</a>
+              <li class="list-inline-item">
+                <a routerLink="/logout" class="btn btn-info"*ngIf="retrieveIsUserLoggedIn()">Logout</a>
+                <li class="list-inline-item">
+                  <a routerLink="/register" class="btn btn-info">Register</a>
           </ul>
         </div>
       </div>
